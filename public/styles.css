@@ -1,0 +1,474 @@
+/* Estilos gerais */
+body {
+  background-color: #f3f4f6;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container da página de login */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Caixa de login */
+.login-box {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+/* Formulário */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Campos de entrada */
+.input-field {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #fff4f4;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+/* Botão de envio */
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #B8603B;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.submit-button:hover {
+  background-color: #9e4f2f;
+}
+
+/* Texto acima do botão de registro */
+.register-text {
+  margin-top: 0;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Link de Registro */
+.register-link {
+  color: #B8603B;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.register-link:hover {
+  color: #9e4f2f;
+}
+
+/* Container da página de upload */
+.min-h-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.left-side, .right-side {
+  flex: 1;
+  padding: 1rem;
+}
+
+.left-side {
+  background-color: #f3f4f6; /* Cor de fundo mais clara */
+  width: 100%;
+}
+
+.right-side {
+  background-color: #e2e8f0; /* Cor de fundo mais escura */
+  width: 100%;
+  position: relative; /* Para posicionar a caixa de input no canto inferior */
+  min-height: 100vh; /* Garante que a altura mínima seja 100vh */
+}
+
+@media (min-width: 768px) {
+  .min-h-screen {
+    flex-direction: row; /* Altera para row em telas maiores */
+  }
+
+  .left-side, .right-side {
+    width: 50%; /* Metade da página */
+  }
+}
+
+.w-1_3, .w-2_3 {
+  width: 100%; /* Define a largura como 100% para dispositivos móveis */
+  max-width: 900px; /* Define uma largura máxima */
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.fixed-height {
+  min-height: 90vh; /* Define uma altura mínima para manter o layout fixo */
+}
+
+/* Caixa de upload */
+.upload-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+/* Botão de Upload */
+.upload-button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  background-color: #B8603B;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+  background-color: #9e4f2f;
+}
+
+/* Botão de Consulta */
+.consult-button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  background-color: #5D8AA8;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.consult-button:hover {
+  background-color: #4a7390;
+}
+
+/* Exibição das respostas */
+.response-container {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+/* Menu superior */
+.header {
+  width: 100%;
+  background-color: white;
+  height: 40px;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav-button {
+  background-color: transparent;
+  color: #B8603B;
+  border: none;
+  border-radius: 5px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-file-upload:hover {
+  background-color: #0056b3;
+}
+
+.custom-file-input {
+  padding: 10px 0;
+  border-radius: 0px;
+  cursor: pointer;
+  font-size: 0rem;
+  background-color: none;
+  color: none;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.custom-file-input::file-selector-button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  background-color: #B8603B;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.custom-file-input::file-selector-button:hover {
+  background-color: #9e4f2f; /* Nova cor de fundo ao passar o mouse */
+  color: #ffffff; /* Nova cor do texto ao passar o mouse */
+}
+
+.nav-button:hover {
+  background-color: #B8603B;
+  color: white;
+}
+
+/* Spinner */
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #000;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 800px) {
+  .nav {
+    display: none;
+  }
+}
+
+/* Botão com largura limitada */
+.button-limited {
+  width: 100%; /* Define a largura como 100% para ocupar o mesmo espaço do input */
+  max-width: 144px; /* Ajuste este valor conforme necessário */
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  background-color: #B8603B;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+.button-limited:hover {
+  background-color: #9e4f2f;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  width: 96%;
+  background-color: none;
+  position: absolute;
+  bottom: 5; /* Posiciona no canto inferior */
+}
+
+.send-button {
+  background-color: #B8603B;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.send-button:hover {
+  background-color: #9e4f2f;
+}
+
+.message-container {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.message-container h2 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.message-container p {
+  font-size: 1rem;
+  color: #333;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.dashboard-page {
+  background-color: #f1f1f1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  overflow-y: auto; /* Adiciona rolagem vertical */
+  max-height: 100vh; /* Garante que a altura máxima seja a altura da tela */
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.document-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+}
+
+.document-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.document-card p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.document-card img {
+  max-width: 100%;
+  max-height: 200px; /* Define uma altura máxima */
+  object-fit: cover; /* Garante que a imagem mantenha a proporção */
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.download-button {
+  background-color: #B8603B;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #9e4f2f;
+}
+
+.queries-section {
+  margin-top: 1rem;
+}
+
+.queries-section h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.queries-section p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+
+.loading-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px; /* Adiciona espaço entre os pontos de carregamento e a caixa de inserção */
+}
+
+.loading-dots span {
+  animation: blink 1.4s infinite both;
+  font-size: 32px; /* Aumenta o tamanho dos pontos */
+  margin: 0 4px; /* Aumenta o espaçamento entre os pontos */
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0%, 80%, 100% {
+    opacity: 0.2; /* Pontos mais claros */
+  }
+  40% {
+    opacity: 1; /* Pontos mais escuros */
+  }
+}
+
+.send-button .fa-spinner {
+  font-size: 16px; /* Ajusta o tamanho do ícone de carregamento */
+}
+
+.document-list {
+  width: 100%;
+  max-width: 600px;
+  max-height: 80vh; /* Define uma altura máxima */
+  overflow-y: auto; /* Adiciona rolagem vertical */
+}
