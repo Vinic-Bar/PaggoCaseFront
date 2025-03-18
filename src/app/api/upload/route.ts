@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
-import formidable, { IncomingForm } from 'formidable';
-import { Readable } from 'stream';
+import formidable, { IncomingForm, Fields, Files } from 'formidable';
+import { PassThrough } from 'stream';
 import path from 'path';
+import { IncomingMessage } from 'http';
 
 export const config = {
   api: {
@@ -11,17 +12,16 @@ export const config = {
 
 const uploadDir = path.join(process.cwd(), '.', '..', 'uploads');
 
-class ReadableStream extends Readable {
+class BufferStream extends PassThrough {
   headers: { [key: string]: string };
   constructor(buffer: Buffer, headers: { [key: string]: string }) {
     super();
     this.headers = headers;
-    this.push(buffer);
-    this.push(null);
+    this.end(buffer);
   }
 }
 
-export async function POST(req: NextRequest) {
+export async function POST(req: NextRequest): Promise<Response> {
   const form = new IncomingForm({
     uploadDir,
     keepExtensions: true,
@@ -35,10 +35,10 @@ export async function POST(req: NextRequest) {
     'content-length': buffer.length.toString(),
   };
 
-  const stream = new ReadableStream(buffer, headers);
+  const stream = new BufferStream(buffer, headers);
 
-  return new Promise((resolve) => {
-    form.parse(stream as any, (err, fields, files) => {
+  return new Promise<Response>((resolve) => {
+    form.parse(stream as unknown as IncomingMessage, (err: Error, fields: Fields, files: Files) => {
       if (err) {
         console.error('Error parsing the files', err);
         resolve(NextResponse.json({ error: 'Error parsing the files' }, { status: 500 }));

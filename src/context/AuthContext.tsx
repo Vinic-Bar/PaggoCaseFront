@@ -1,4 +1,3 @@
-// src/context/AuthContext.tsx
 "use client";
 import { createContext, useState, useEffect, ReactNode } from "react";
 import { useRouter } from "next/navigation";
@@ -6,7 +5,6 @@ import { useRouter } from "next/navigation";
 interface User {
   id: string;
   email: string;
-  // Adicione outras propriedades do usuário conforme necessário
 }
 
 interface AuthContextType {
@@ -57,7 +55,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
     const data = await res.json();
     setUser(data.user);
-    localStorage.setItem("token", data.token); // Supondo que o backend retorna um token
+    localStorage.setItem("token", data.token);
   };
 
   const logout = () => {

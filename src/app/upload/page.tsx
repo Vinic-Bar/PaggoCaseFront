@@ -4,18 +4,7 @@ import { useState, useContext, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { AuthContext } from "../../context/AuthContext";
 import Header from "../../components/Header";
-import { FaPaperPlane } from 'react-icons/fa'; // Importe o ícone
-
-interface AuthContextType {
-  user: User | null;
-  login: (username: string, password: string) => Promise<void>;
-  logout: () => void;
-}
-
-interface User {
-  id: string;
-  email: string;
-}
+import { FaPaperPlane } from 'react-icons/fa';
 
 const UploadPage = () => {
   const auth = useContext(AuthContext);
