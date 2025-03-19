@@ -176,7 +176,7 @@ const UploadPage = () => {
     <>
       <Header />
       <div className="h-screen flex flex-col items-center justify-start p-8">
-        <div className="left-side w-full max-w-4xl h-auto flex-shrink-0">
+        <div className="left-side w-full max-w-4xl h-auto flex-shrink-0 fixed-section">
           <h1 className="text-3xl font-semibold mb-8">Faça upload da sua fatura</h1>
 
           <div className="flex flex-col items-center gap-4">
@@ -210,7 +210,7 @@ const UploadPage = () => {
           {message && <p className="mt-4 text-sm text-gray-600">{message}</p>}
         </div>
 
-        <div className="flex-1 overflow-y-auto w-full max-w-4xl">
+        <div className="flex-1 overflow-y-auto w-full max-w-4xl content-section">
           {extractedText && (
             <div className="mt-8 p-4 border rounded bg-gray-100 text-container">
               <h2 className="text-lg font-semibold mb-2">Texto obtido da imagem:</h2>
