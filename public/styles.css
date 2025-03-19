@@ -4,10 +4,10 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
+  overflow: hidden; /* Impede a rolagem da página inteira */
+  display: flex;
+  flex-direction: column;
 }
 
 /* Container da página de login */
@@ -89,8 +89,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  min-height: 100vh;
-  overflow-y: auto;
+  height: 100vh;
+  overflow-y: auto; /* Permite a rolagem vertical */
+  padding-top: 60px; /* Espaço para o cabeçalho fixo */
 }
 
 .left-side, .right-side {
@@ -197,7 +198,7 @@ body {
 .header {
   width: 100%;
   background-color: white;
-  height: 40px;
+  height: 60px;
   padding: 0.5rem;
   display: flex;
   justify-content: flex-end;
