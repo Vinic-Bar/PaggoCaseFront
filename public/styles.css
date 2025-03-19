@@ -91,7 +91,6 @@ body {
   align-items: center;
   justify-content: flex-start;
   height: 100vh;
-  overflow-y: auto; /* Permite a rolagem vertical */
   padding-top: 60px; /* Espaço para o cabeçalho fixo */
 }
 
@@ -468,17 +467,21 @@ body {
 }
 
 .send-button .fa-spinner {
-  font-size: 16px; /* Ajusta o tamanho do ícone de carregamento */
+  font-size: 16px; 
 }
 
 .document-list {
   width: 100%;
   max-width: 600px;
-  max-height: 80vh; /* Define uma altura máxima */
-  overflow-y: auto; /* Adiciona rolagem vertical */
+  max-height: 80vh; 
+  overflow-y: auto;
 }
 
 .text-container {
-  max-height: 300px; /* Define uma altura máxima */
-  overflow-y: auto;  /* Adiciona rolagem quando necessário */
+  max-height: 500px; 
+  overflow-y: auto; 
+}
+
+.text-container p {
+  white-space: pre-wrap; /* Mantém a formatação do texto */
 }
