@@ -175,8 +175,8 @@ const UploadPage = () => {
   return (
     <>
       <Header />
-      <div className="min-h-screen flex flex-col items-center justify-start p-8">
-        <div className="left-side">
+      <div className="min-h-screen flex flex-col items-center justify-start p-8 overflow-y-auto">
+        <div className="left-side w-full max-w-4xl">
           <h1 className="text-3xl font-semibold mb-8">Faça upload da sua fatura</h1>
 
           <div className="flex flex-col items-center gap-4">
