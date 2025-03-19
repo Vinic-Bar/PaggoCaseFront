@@ -182,6 +182,8 @@ const UploadPage = () => {
           <div className="flex flex-col items-center gap-4">
             <input
               type="file"
+              id="file-upload"
+              name="file-upload"
               onChange={handleFileChange}
               className="custom-file-input"
             />
@@ -213,19 +215,10 @@ const UploadPage = () => {
               <p className="text-sm text-gray-800">{extractedText}</p>
             </div>
           )}
-        </div>
 
-        <div className="right-side">
           {extractedText && (
-            <>
-              <div className="flex flex-col items-center gap-4">
-                {explanation && (
-                  <div className="message-container">
-                    <h2>Explicação:</h2>
-                    <p>{explanation}</p>
-                  </div>
-                )}
-              </div>
+            <div className="mt-8 p-4 border rounded bg-gray-100">
+              <h2 className="text-lg font-semibold mb-2">Faça uma pergunta sobre o texto:</h2>
               <div className="input-container">
                 {isLoading && (
                   <div className="loading-dots">
@@ -234,9 +227,11 @@ const UploadPage = () => {
                 )}
                 <input
                   type="text"
+                  id="query-input"
+                  name="query-input"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  placeholder="Faça uma pergunta sobre o texto"
+                  placeholder="Digite sua pergunta"
                   className="input-field"
                 />
                 <button
@@ -251,7 +246,14 @@ const UploadPage = () => {
                   )}
                 </button>
               </div>
-            </>
+            </div>
+          )}
+
+          {explanation && (
+            <div className="mt-8 p-4 border rounded bg-gray-100">
+              <h2 className="text-lg font-semibold mb-2">Explicação:</h2>
+              <p className="text-sm text-gray-800">{explanation}</p>
+            </div>
           )}
         </div>
       </div>
