@@ -175,8 +175,8 @@ const UploadPage = () => {
   return (
     <>
       <Header />
-      <div className="min-h-screen flex flex-col items-center justify-start p-8 overflow-y-auto">
-        <div className="left-side w-full max-w-4xl">
+      <div className="h-screen flex flex-col items-center justify-start p-8">
+        <div className="left-side w-full max-w-4xl h-auto flex-shrink-0">
           <h1 className="text-3xl font-semibold mb-8">Faça upload da sua fatura</h1>
 
           <div className="flex flex-col items-center gap-4">
@@ -210,7 +210,7 @@ const UploadPage = () => {
           {message && <p className="mt-4 text-sm text-gray-600">{message}</p>}
 
           {extractedText && (
-            <div className="mt-8 p-4 border rounded bg-gray-100 text-container">
+            <div className="mt-8 p-4 border rounded bg-gray-100 text-container flex-1 overflow-y-auto">
               <h2 className="text-lg font-semibold mb-2">Texto obtido da imagem:</h2>
               <p className="text-sm text-gray-800 whitespace-pre-wrap">{extractedText}</p>
             </div>
@@ -250,7 +250,7 @@ const UploadPage = () => {
           )}
 
           {explanation && (
-            <div className="mt-8 p-4 border rounded bg-gray-100 text-container">
+            <div className="mt-8 p-4 border rounded bg-gray-100 text-container flex-1 overflow-y-auto">
               <h2 className="text-lg font-semibold mb-2">Explicação:</h2>
               <p className="text-sm text-gray-800 whitespace-pre-wrap">{explanation}</p>
             </div>
