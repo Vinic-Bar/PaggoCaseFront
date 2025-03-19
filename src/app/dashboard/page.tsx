@@ -30,7 +30,7 @@ const DashboardPage = () => {
   useEffect(() => {
     const fetchDocuments = async () => {
       try {
-        const res = await fetch("http://localhost:3001/upload/documents", {
+        const res = await fetch("https://paggocaseback-production.up.railway.app/upload/documents", { //http://localhost:3001/upload/documents
           headers: {
             "Authorization": `Bearer ${localStorage.getItem("token")}`,
           },
@@ -54,7 +54,8 @@ const DashboardPage = () => {
 
   const handleDownload = async (fileId: number) => {
     try {
-      const response = await fetch(`http://localhost:3001/upload/download/${fileId}`);
+      //const response = await fetch(`http://localhost:3001/upload/download/${fileId}`);
+      const response = await fetch(`https://paggocaseback-production.up.railway.app/upload/download/${fileId}`);
       if (!response.ok) {
         throw new Error('Erro ao baixar o documento');
       }

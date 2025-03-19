@@ -51,7 +51,7 @@ const UploadPage = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:3001/upload", {
+      const res = await fetch("https://paggocaseback-production.up.railway.app/upload", {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${localStorage.getItem("token")}`,
@@ -78,7 +78,7 @@ const UploadPage = () => {
         }
 
         // Chamar a API de OCR
-        const ocrRes = await fetch("http://localhost:3001/ocr", {
+        const ocrRes = await fetch("https://paggocaseback-production.up.railway.app/ocr", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -100,7 +100,7 @@ const UploadPage = () => {
         setExtractedText(ocrData.text);
 
         // Atualizar o texto da fatura no backend
-        await fetch("http://localhost:3001/upload/update-invoice-text", {
+        await fetch("https://paggocaseback-production.up.railway.app/upload/update-invoice-text", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -131,7 +131,7 @@ const UploadPage = () => {
     setIsLoading(true); // Inicia o carregamento
 
     try {
-      const res = await fetch("http://localhost:3001/llm", {
+      const res = await fetch("https://paggocaseback-production.up.railway.app/llm", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -146,7 +146,7 @@ const UploadPage = () => {
         setExplanation(data.explanation);
 
         // Salvar a pergunta e resposta no backend
-        await fetch("http://localhost:3001/upload/save-query", {
+        await fetch("https://paggocaseback-production.up.railway.app/upload/save-query", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
