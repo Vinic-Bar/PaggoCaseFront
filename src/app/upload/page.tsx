@@ -210,7 +210,7 @@ const UploadPage = () => {
           {message && <p className="mt-4 text-sm text-gray-600">{message}</p>}
 
           {extractedText && (
-            <div className="mt-8 p-4 border rounded bg-gray-100">
+            <div className="mt-8 p-4 border rounded bg-gray-100 text-container">
               <h2 className="text-lg font-semibold mb-2">Texto obtido da imagem:</h2>
               <p className="text-sm text-gray-800">{extractedText}</p>
             </div>
@@ -250,7 +250,7 @@ const UploadPage = () => {
           )}
 
           {explanation && (
-            <div className="mt-8 p-4 border rounded bg-gray-100">
+            <div className="mt-8 p-4 border rounded bg-gray-100 text-container">
               <h2 className="text-lg font-semibold mb-2">Explicação:</h2>
               <p className="text-sm text-gray-800">{explanation}</p>
             </div>

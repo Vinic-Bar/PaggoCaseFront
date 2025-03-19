@@ -8,6 +8,7 @@ body {
   overflow: hidden; /* Impede a rolagem da página inteira */
   display: flex;
   flex-direction: column;
+  overflow-y: auto; /* Permite rolar a página para ver todo o conteúdo */
 }
 
 /* Container da página de login */
@@ -309,8 +310,11 @@ body {
   align-items: center;
   width: 96%;
   background-color: none;
-  position: absolute;
-  bottom: 5; /* Posiciona no canto inferior */
+  position: sticky;
+  bottom: 0;
+  background: white; /* Mantém o fundo branco */
+  padding: 1rem;
+  border-top: 1px solid #ddd; /* Linha para separar do conteúdo acima */
 }
 
 .send-button {
@@ -472,4 +476,9 @@ body {
   max-width: 600px;
   max-height: 80vh; /* Define uma altura máxima */
   overflow-y: auto; /* Adiciona rolagem vertical */
+}
+
+.text-container {
+  max-height: 300px; /* Define uma altura máxima */
+  overflow-y: auto;  /* Adiciona rolagem quando necessário */
 }
